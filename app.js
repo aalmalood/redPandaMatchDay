@@ -69,7 +69,7 @@
 			if(pla.blueTeamStrength < pla.redTeamStrength){
 				weekerTeam = 0;
 			}
-			var leftedPlayer = pla.matchPlayer;
+			var leftedPlayer = pla.matchPlayer.slice();
 			for(var i = 0 ; i < pla.blueTeam.length ; i ++){
 				var player1 = pla.blueTeam[i];
 				var player2 = pla.redTeam[i];
