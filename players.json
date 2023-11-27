@@ -21,7 +21,7 @@
     {"name" : "Salman Aljabry", "strength" : 3, "pose": "M"},
     {"name" : "Ali Khalid", "strength" : 3, "pose": "D"},
     {"name" : "Talal Aljar", "strength" : 4, "pose": "M"},
-    {"name" : "Bader Alhashash", "strength" : 4, "pose": "D"},
+    {"name" : "Bader Alhashash", "strength" : 3, "pose": "D"},
     {"name" : "Abdulrahman Aljabry", "strength" : 3, "pose": "D"},
     {"name" : "Khalid Fuad", "strength" : 4, "pose": "M"},
     {"name" : "Moh'd Fuad", "strength" : 3, "pose": "M"},
