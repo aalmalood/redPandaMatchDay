@@ -55,7 +55,9 @@
 		pla.blueTeamStrength ;
 		pla.redTeamStrength ;
 		pla.ganerate = function ganerate(){
+			console.log("before shuffle " , pla.matchPlayer);
 			pla.matchPlayer = shuffle(pla.matchPlayer);
+			console.log("after shuffle " , pla.matchPlayer);
 			var result = equalTeams(pla.matchPlayer);
 		
 		pla.blueTeam = result.teams[0];
