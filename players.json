@@ -27,6 +27,7 @@
     {"name" : "Moh'd Fuad", "strength" : 3, "pose": "M"},
     {"name" : "Nayef Aljabry", "strength" : 3, "pose": "D"},
     {"name" : "S3ood Alhashash", "strength" : 5, "pose": "M"},
-    {"name" : "Ali Alhashmi", "strength" : 3, "pose": "D"}
+    {"name" : "Ali Alhashmi", "strength" : 3, "pose": "D"},
+    {"name" : "Abdulla Alajji", "strength" : 4, "pose": "M"}
 ]
 
