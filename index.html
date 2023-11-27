@@ -65,35 +65,24 @@
       
       <div class="row">
         <div class="column">
-	   <h4 ng-if="pp.redTeam.length > 0">Team Strgenth = {{pp.redTeamStrength}}</h4>
-           <h3 class="bg-danger" align="center"  class="display-3">Red Team</h3>
-      
-            <table width="50%" class="table">
-                  <tr class="redTeam">
-                      <th scope="col"> Name </th>
-                      
-                  </tr>
-               
-          
-                <tr class="table-danger" ng-repeat="y in pp.redTeam">
-                    <td>{{y.name}}</td>
-                </tr>
-              </table>  
+          <h4 ng-if="pp.redTeam.length > 0">Team Strgenth = {{pp.redTeamStrength}}</h4>
+              <ol class="bg-danger" style="text-align: center;">
+                <h3 class="bg-danger" align="center"  class="display-3">Red Team</h3>
+                <li ng-repeat="y in pp.redTeam">
+                  {{y.name}}
+                </li>
+              </ol> 
             </div>
         <div class="column">
-		 <h4 ng-if="pp.blueTeam.length > 0">Team Strgenth = {{pp.blueTeamStrength}}</h4>
-		<h3 class="bg-info" align="center" class="display-3">Blue Team</h3>
-          <table width="50%" class="table">
-            
-                <tr class="blueTeam">
-                    <th scope="col"> Name </th>
-                </tr>
-              
-        
-              <tr lass="table-info" ng-repeat="y in pp.blueTeam">
-                  <td>{{y.name}}</td>
-              </tr>
-            </table>  
+          <h4 ng-if="pp.blueTeam.length > 0">Team Strgenth = {{pp.blueTeamStrength}}</h4>
+          
+          <ol class="bg-info" style="text-align: center;">
+            <h3 class="bg-info" align="center" class="display-3">Blue Team</h3>
+            <li ng-repeat="y in pp.blueTeam">
+              {{y.name}}
+            </li>
+          </ol>
+         
           </div>
       </div>
           
