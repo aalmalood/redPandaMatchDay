@@ -31,14 +31,11 @@
 	};
 	}
 
+	
+	  
 
 	function PlayerController(PlayerListService) {
 		var pla = this;
-
-		
-		
-		
-		
 		pla.search = "";
 		pla.result = "";
 		pla.matchPlayer = [];
@@ -58,6 +55,7 @@
 		pla.blueTeamStrength ;
 		pla.redTeamStrength ;
 		pla.ganerate = function ganerate(){
+			pla.matchPlayer = shuffle(pla.matchPlayer);
 			var result = equalTeams(pla.matchPlayer);
 		
 		pla.blueTeam = result.teams[0];
@@ -136,6 +134,24 @@
 				}
 			}
 		}
+		function shuffle(array) {
+			let currentIndex = array.length,  randomIndex;
+		  
+			// While there remain elements to shuffle.
+			while (currentIndex > 0) {
+		  
+			  // Pick a remaining element.
+			  randomIndex = Math.floor(Math.random() * currentIndex);
+			  currentIndex--;
+		  
+			  // And swap it with the current element.
+			  [array[currentIndex], array[randomIndex]] = [
+				array[randomIndex], array[currentIndex]];
+			}
+		  
+			return array;
+		  }
+
 		function equalTeams(players) {
 			// SORT PLAYERS FROM WEAKEST TO STRONGEST
 			players.sort(compareStrength);
