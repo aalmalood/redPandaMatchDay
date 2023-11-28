@@ -140,8 +140,8 @@
 				teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
 			}
 		}
-		console.log("team A" , teamA);
-		console.log("team B" , teamB);
+		//console.log("team A" , teamA);
+		//console.log("team B" , teamB);
 		pla.blueTeam = teamA;
 		pla.redTeam = teamB;
 		pla.blueTeamStrength = teamAStrngeth;
@@ -165,7 +165,7 @@
 					leftedPlayer.splice(idx, 1);
 				}
 			}
-			console.log("lefted players" ,leftedPlayer);
+			//console.log("lefted players" ,leftedPlayer);
 			if(leftedPlayer != null && leftedPlayer.length > 0){
 				for(var i = 0 ; i<leftedPlayer.length ; i++){
 					var weekerTeam = 1 ;
@@ -248,9 +248,9 @@
 
 		function equalTeams(players) {
 			// SORT PLAYERS FROM WEAKEST TO STRONGEST
-			console.log("before sort" , players);
+			//console.log("before sort" , players);
 			players.sort(compareStrength);
-			console.log("after sort" , players.sort(compareStrength));
+			//console.log("after sort" , players.sort(compareStrength));
 			// INITIAL DISTRIBUTION OF PLAYERS INTO WEAKER AND STRONGER TEAM (ALTERNATING)
 			var wTeam = [], sTeam = [];
 			for (var i = players.length % 2; i < players.length; i += 2) {
