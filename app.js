@@ -202,13 +202,13 @@
 		  };
 		
 		function compareStrength(a, b) { // for sorting players and selections
-			return (((a.strength * 2) + a.movement)/2) - (((b.strength *2) + b.movement)/2) ;
+			return (((a.strength * 3) + a.movement)/2) - (((b.strength *3) + b.movement)/2) ;
 		}
 		function teamStrength(players) {
-			return players.reduce(function(total, player) {return total + (((player.strength *2) + player.movement)/2);}, 0);
+			return players.reduce(function(total, player) {return total + (((player.strength *3) + player.movement)/2);}, 0);
 		}
 		function selectionStrength(players, selection) {
-			return players.reduce(function(total, player, index) {return total + (((player.strength *2) + player.movement)/2) * selection[index];}, 0);
+			return players.reduce(function(total, player, index) {return total + (((player.strength *3) + player.movement)/2) * selection[index];}, 0);
 		}
 		function nextPermutation(selection) { // reverse-lexicographical next permutation of a bit array
 			var max = true, pos = selection.length, set = 1;
