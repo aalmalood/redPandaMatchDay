@@ -9,7 +9,7 @@
     {"name" : "Ahmed Aljabry", "strength" : 3, "pose": "M", "movement" : 5  },
     {"name" : "Moh'd Basel", "strength" : 3, "pose": "D", "movement" : 5  },
     {"name" : "Abdulla Basel", "strength" : 3, "pose": "D", "movement" : 5  },
-    {"name" : "Abdulla Alsowaidi", "strength" : 1, "pose": "D", "movement" : 1  },
+    {"name" : "Abdulla Alsowaidi", "strength" : 1, "pose": "M", "movement" : 1  },
     {"name" : "Shwaiter", "strength" : 2, "pose": "M", "movement" : 1  },
     {"name" : "Khairi", "strength" : 4, "pose": "D", "movement" : 5  },
     {"name" : "Moh'd Bosharar", "strength" : 2, "pose": "D", "movement" : 3  },
