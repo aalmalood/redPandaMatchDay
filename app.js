@@ -174,10 +174,10 @@
 					}
 					if(weekerTeam == 0){
 						pla.blueTeam.push(leftedPlayer[i]);
-						pla.blueTeamStrength = pla.blueTeamStrength + leftedPlayer[i].strength + leftedPlayer[i].movement;;
+						pla.blueTeamStrength = pla.blueTeamStrength + (((leftedPlayer[i].strength *3)+ leftedPlayer[i].movement)/2);
 					}else{
 						pla.redTeam.push(leftedPlayer[i]);
-						pla.redTeamStrength = pla.redTeamStrength + leftedPlayer[i].strength + leftedPlayer[i].movement;
+						pla.redTeamStrength = pla.redTeamStrength + (((leftedPlayer[i].strength *3)+ leftedPlayer[i].movement)/2);
 					}
 				}
 				
