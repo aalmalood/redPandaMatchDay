@@ -184,6 +184,8 @@
 				
 			}
 		}
+		pla.blueTeam = shuffle(pla.blueTeam);
+		pla.redTeam = shuffle(pla.redTeam);
 		}
 		
 		
