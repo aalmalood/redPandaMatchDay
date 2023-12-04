@@ -142,8 +142,8 @@
 		}
 		//console.log("team A" , teamA);
 		//console.log("team B" , teamB);
-		pla.blueTeam = teamA;
-		pla.redTeam = teamB;
+		pla.blueTeam = shuffle(teamA);
+		pla.redTeam = shuffle(teamB);
 		pla.blueTeamStrength = teamAStrngeth;
 		pla.redTeamStrength = teamBStrngeth;
 
