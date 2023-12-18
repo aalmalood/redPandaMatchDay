@@ -28,5 +28,6 @@
     {"name" : "S3ood Alhashash", "strength" : 5, "pose": "M", "movement" : 5  },
     {"name" : "Ahmed Jasim", "strength" : 5, "pose": "M", "movement" : 5  },
     {"name" : "Abdulrahman Aldaraj", "strength" : 3, "pose": "M", "movement" : 3  },
-    {"name" : "Isa BuAli", "strength" : 2, "pose": "D", "movement" : 3  }
+    {"name" : "Isa BuAli", "strength" : 2, "pose": "D", "movement" : 3  }, 
+    {"name" : "Mahfoudh", "strength" : 5, "pose": "M", "movement" : 5  } 
 ]
