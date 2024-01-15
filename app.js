@@ -227,6 +227,92 @@
 			}
 		}
 		}
+		pla.positionRateGanerate = function positionRateGanerate(){
+			//console.log("before shuffle " , pla.matchPlayer);
+			pla.matchPlayer = shuffle(pla.matchPlayer);
+			//console.log("after shuffle " , pla.matchPlayer);
+			//var result = oldEqualTeams(pla.matchPlayer);
+			
+		var midfielderPlayer = pla.matchPlayer.filter(o => o.pose=="M");
+		//console.log("midfielderPlayer " , midfielderPlayer);
+		var mResult = oldoldEqualTeams(midfielderPlayer);
+		var defenderPlayer = pla.matchPlayer.filter(o => o.pose=="D");
+		//console.log("defenderPlayer " , defenderPlayer);
+		var dResult = oldEqualTeams(defenderPlayer);
+		var teamA = [];
+		var teamAStrngeth = 0;
+		var teamB = [];
+		var teamBStrngeth = 0;
+		if(mResult.strengths[0] >= mResult.strengths[1]){
+			if(dResult.strengths[0] > dResult.strengths[1]){
+				teamA = [...mResult.teams[0] , ...dResult.teams[1]];
+				teamB = [...mResult.teams[1] , ...dResult.teams[0]];
+				teamAStrngeth = mResult.strengths[0] + dResult.strengths[1];
+				teamBStrngeth = mResult.strengths[1] + dResult.strengths[0];
+			}else{
+				teamA = [...mResult.teams[0] , ...dResult.teams[0]];
+				teamB = [...mResult.teams[1] , ...dResult.teams[1]];
+				teamAStrngeth = mResult.strengths[0] + dResult.strengths[0];
+				teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
+			}
+		}else{
+			if(dResult.strengths[0] < dResult.strengths[1]){
+				teamA = [...mResult.teams[0] , ...dResult.teams[1]];
+				teamB = [...mResult.teams[1] , ...dResult.teams[0]];
+				teamAStrngeth = mResult.strengths[0] + dResult.strengths[1];
+				teamBStrngeth = mResult.strengths[1] + dResult.strengths[0];
+			}else{
+				teamA = [...mResult.teams[0] , ...dResult.teams[0]];
+				teamB = [...mResult.teams[1] , ...dResult.teams[1]];
+				teamAStrngeth = mResult.strengths[0] + dResult.strengths[0];
+				teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
+			}
+		}
+		console.log("team A" , teamA);
+		console.log("team B" , teamB);
+		pla.blueTeam = teamA;
+		pla.redTeam = teamB;
+		pla.blueTeamStrength = teamAStrngeth;
+		pla.redTeamStrength = teamBStrngeth;
+
+
+
+
+		if(pla.matchPlayer.length % 2 == 1 || pla.matchPlayer.length > (pla.blueTeam.length + pla.redTeam.length)){
+			
+			var leftedPlayer = pla.matchPlayer.slice();
+			for(var i = 0 ; i < pla.blueTeam.length ; i ++){
+				var player1 = pla.blueTeam[i];
+				var player2 = pla.redTeam[i];
+				var idx = leftedPlayer.indexOf(player1);
+				if (idx > -1) {
+					leftedPlayer.splice(idx, 1);
+				}
+				var idx = leftedPlayer.indexOf(player2);
+				if (idx > -1) {
+					leftedPlayer.splice(idx, 1);
+				}
+			}
+			console.log("lefted players" ,leftedPlayer);
+			if(leftedPlayer != null && leftedPlayer.length > 0){
+				for(var i = 0 ; i<leftedPlayer.length ; i++){
+					var weekerTeam = 1 ;
+					if(pla.blueTeamStrength < pla.redTeamStrength){
+						weekerTeam = 0;
+					}
+					if(weekerTeam == 0){
+						pla.blueTeam.push(leftedPlayer[i]);
+						pla.blueTeamStrength = pla.blueTeamStrength + leftedPlayer[i].strength;
+					}else{
+						pla.redTeam.push(leftedPlayer[i]);
+						pla.redTeamStrength = pla.redTeamStrength + leftedPlayer[i].strength;
+					}
+				}
+				
+				
+			}
+		}
+		}
 		
 		
 
