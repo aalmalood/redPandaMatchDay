@@ -1,5 +1,5 @@
 [ 
-    {"name" : "Abdulla Almalood", "strength" : 5, "pose": "M", "movement" : 5  },
+    {"name" : "Abdulla Almalood", "strength" : 3, "pose": "M", "movement" : 4 },
     {"name" : "Alaa Alzubaidi", "strength" : 3, "pose": "M", "movement" : 3  },
     {"name" : "Ilia", "strength" : 5, "pose": "D", "movement" : 5  },
     {"name" : "Fayez Fouad", "strength" : 5, "pose": "M", "movement" : 3  },
