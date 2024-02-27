@@ -235,7 +235,7 @@
 			
 		var midfielderPlayer = pla.matchPlayer.filter(o => o.pose=="M");
 		//console.log("midfielderPlayer " , midfielderPlayer);
-		var mResult = oldoldEqualTeams(midfielderPlayer);
+		var mResult = oldEqualTeams(midfielderPlayer);
 		var defenderPlayer = pla.matchPlayer.filter(o => o.pose=="D");
 		//console.log("defenderPlayer " , defenderPlayer);
 		var dResult = oldEqualTeams(defenderPlayer);
