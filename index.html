@@ -31,9 +31,8 @@
             <tr>
                 <th scope="col"> Name </th>
                 <th scope="col"> Rate </th>
-                <th scope="col"> Movement </th>
 		    <th scope="col"> Position </th>
-                <th scope="col"> total </th>
+                
                 <th scope="col"> checked </th>
             </tr>
           </thead>
@@ -41,9 +40,7 @@
           <tr ng-repeat="x in pp.players | filter : pp.search">
               <td>{{x.name}}</td>
               <td>{{x.strength}}</td>
-              <td>{{x.movement}}</td>
 		  <td>{{x.pose}}</td>
-              <td>{{(x.strength *3 + x.movement )/2}}</td>
               <td><input id="{{x.name}}" type="checkbox" value="{{x}}" ng-checked="selection.indexOf(x) > -1" ng-click="pp.toggleSelection(x)"></td>
           </tr>
         </table>    
