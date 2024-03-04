@@ -32,5 +32,6 @@
     {"name" : "Mahfoudh", "strength" : 9, "pose": "M", "movement" : 5  } ,
     {"name" : "S3ood Aljar", "strength" : 7, "pose": "M", "movement" : 4  },
     {"name" : "Fardan", "strength" : 7, "pose": "M", "movement" : 4  },
-    {"name" : "Mohd Almesmari", "strength" : 6, "pose": "D", "movement" : 3  }
+    {"name" : "Mohd Almesmari", "strength" : 6, "pose": "D", "movement" : 3  },
+    {"name" : "Albdulla G Aljabri", "strength" : 7, "pose": "D", "movement" : 4  }
 ]
