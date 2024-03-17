@@ -115,7 +115,16 @@
 		var teamAStrngeth = 0;
 		var teamB = [];
 		var teamBStrngeth = 0;
-		if(mResult.strengths[0] >= mResult.strengths[1]){
+		var teamC = [];
+		var teamCStrngeth = 0;
+		teamA = [...mResult.teams[0] , ...dResult.teams[2]];
+		teamB = [...mResult.teams[1] , ...dResult.teams[1]];
+		teamC = [...mResult.teams[2] , ...dResult.teams[0]];
+		teamAStrngeth = mResult.strengths[0] + dResult.strengths[2];
+		teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
+		teamCStrngeth = mResult.strengths[2] + dResult.strengths[0];
+
+		/*if(mResult.strengths[0] >= mResult.strengths[1]){
 			if(dResult.strengths[0] > dResult.strengths[1]){
 				teamA = [...mResult.teams[0] , ...dResult.teams[1]];
 				teamB = [...mResult.teams[1] , ...dResult.teams[0]];
@@ -139,7 +148,7 @@
 				teamAStrngeth = mResult.strengths[0] + dResult.strengths[0];
 				teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
 			}
-		}
+		}*/
 		console.log("team A" , teamA);
 		console.log("team B" , teamB);
 		pla.blueTeam = teamA;
@@ -252,10 +261,11 @@
 			players.sort(compareStrength);
 			console.log("after sort" , players.sort(compareStrength));
 			// INITIAL DISTRIBUTION OF PLAYERS INTO WEAKER AND STRONGER TEAM (ALTERNATING)
-			var wTeam = [], sTeam = [];
-			for (var i = players.length % 2; i < players.length; i += 2) {
+			var wTeam = [], sTeam = [] ; cTeam = [];
+			for (var i = players.length % 3; i < players.length; i += 3) {
 				wTeam.push(players[i]);
 				sTeam.push(players[i + 1]);
+				cTeam.push(players[i + 2]);
 			}
 			/*if(players.length % 2 ==1){
 				sTeam.push(players[players.length -1]);
@@ -264,10 +274,10 @@
 			// CALCULATE INITIAL STRENGTH DIFFERENCE
 			var initDiff = teamStrength(sTeam) - teamStrength(wTeam);
 			var bestDiff = initDiff;
-			var wBestSel = [], sBestSel = [];
+			var wBestSel = [], sBestSel = [], cBestSel = [];
 			// CHECK SELECTIONS OF EVERY SIZE
 			for (var selSize = 1; selSize < teamSize && bestDiff > 1; selSize++) {
-				var wSelections = [], sSelections = [], selection = [];
+				var wSelections = [], sSelections = [], cSelections = [], selection = [];
 				// CREATE INITIAL SELECTION BIT-ARRAY FOR WEAKER TEAM (SKIP PLAYER 1)
 				for (var i = 0; i < teamSize; i++)
 					selection[i] = (i > 0 && i <= selSize) ? 1 : 0;
@@ -284,17 +294,23 @@
 				while (nextPermutation(selection));
 				// SORT SELECTIONS FROM WEAKEST TO STRONGEST
 				sSelections.sort(compareStrength);
+				// STORE ALL SELECTIONS FROM STRONGER TEAM AND THEIR STRENGTH
+				do cSelections.push({selection: selection.slice(), strength: selectionStrength(cTeam, selection)});
+				while (nextPermutation(selection));
+				// SORT SELECTIONS FROM WEAKEST TO STRONGEST
+				cSelections.sort(compareStrength);
 				// ITERATE OVER SELECTIONS FROM BOTH TEAMS
-				var wPos = 0, sPos = 0;
-				while (wPos < wSelections.length && sPos < sSelections.length) {
+				var wPos = 0, sPos = 0, cPos = 0;
+				while (wPos < wSelections.length && sPos < sSelections.length && cPos < cSelections.length) {
 					// CALCULATE STRENGTH DIFFERENCE IF THESE SELECTIONS WERE SWAPPED
-					var wStrength = wSelections[wPos].strength, sStrength = sSelections[sPos].strength;
+					var wStrength = wSelections[wPos].strength, sStrength = sSelections[sPos].strength, cStrength = cSelections[cPos].strength;
 					var diff = Math.abs(initDiff - 2 * (sStrength - wStrength));
 					// SET NEW BEST STRENGTH DIFFERENCE IF SMALLER THAN CURRENT BEST
 					if (diff < bestDiff) {
 						bestDiff = diff;
 						wBestSel = wSelections[wPos].selection.slice();
 						sBestSel = sSelections[sPos].selection.slice();
+						cBestSel = cSelections[cPos].selection.slice();
 						// STOP SEARCHING IF PERFECT SOLUTION FOUND (DIFFERENCE 0 OR 1)
 						if (bestDiff < 2) break;
 					}
@@ -304,7 +320,9 @@
 			}
 			// PERFORM SWAP OF BEST PAIR OF SELECTIONS FROM EACH TEAM
 			swapPlayers(wTeam, sTeam, wBestSel, sBestSel);
-			return {teams: [wTeam, sTeam], strengths: [teamStrength(wTeam), teamStrength(sTeam)]};
+			swapPlayers(cTeam, sTeam, cBestSel, sBestSel);
+			swapPlayers(sTeam, cTeam, sBestSel, cBestSel);
+			return {teams: [wTeam, sTeam,cTeam], strengths: [teamStrength(wTeam), teamStrength(sTeam), teamStrength(cTeam)]};
 		}
 		
 		
