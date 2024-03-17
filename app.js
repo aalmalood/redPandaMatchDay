@@ -126,6 +126,9 @@
 		teamAStrngeth = mResult.strengths[0] + dResult.strengths[2];
 		teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
 		teamCStrngeth = mResult.strengths[2] + dResult.strengths[0];
+		console.log("teamA " , teamA);
+		console.log("teamB " , teamB);
+		console.log("teamC " , teamC);
 
 		/*if(mResult.strengths[0] >= mResult.strengths[1]){
 			if(dResult.strengths[0] > dResult.strengths[1]){
