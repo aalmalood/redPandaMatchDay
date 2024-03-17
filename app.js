@@ -310,10 +310,10 @@
 				cSelections.sort(compareStrength);
 				// ITERATE OVER SELECTIONS FROM BOTH TEAMS
 				var wPos = 0, sPos = 0, cPos = 0;
-			/*	while (wPos < wSelections.length && sPos < sSelections.length && cPos < cSelections.length) {
+				while (wPos < wSelections.length && sPos < sSelections.length && cPos < cSelections.length) {
 					// CALCULATE STRENGTH DIFFERENCE IF THESE SELECTIONS WERE SWAPPED
 					var wStrength = wSelections[wPos].strength, sStrength = sSelections[sPos].strength, cStrength = cSelections[cPos].strength;
-					var diff = Math.abs(initDiff - 3 * (sStrength - wStrength));
+					var diff = Math.abs(initDiff - 3 * (sStrength - wStrength - cStrength));
 					// SET NEW BEST STRENGTH DIFFERENCE IF SMALLER THAN CURRENT BEST
 					if (diff < bestDiff) {
 						bestDiff = diff;
@@ -324,8 +324,21 @@
 						if (bestDiff < 2) break;
 					}
 					// ADVANCE TO NEXT SELECTION FROM WEAKER OR STRONGER TEAM
-					if (2 * (sStrength - wStrength) > initDiff) ++wPos; else ++sPos;
-				}*/
+					if (2 * (sStrength - wStrength) > initDiff){
+						if(2 * (cStrength - wStrength) > initDiff){
+							++wPos;
+						}else{
+							++cPos;
+						}
+						
+					}  else {
+						if(2 * (cStrength - sStrength) > initDiff){
+							++sPos;
+						}else{
+							++cPos;
+						}
+					} 
+				}
 			}
 			// PERFORM SWAP OF BEST PAIR OF SELECTIONS FROM EACH TEAM
 			swapPlayers(wTeam, sTeam, wBestSel, sBestSel);
