@@ -52,6 +52,7 @@
 		}
 		pla.redTeam = [];
 		pla.blueTeam = [];
+		pla.whiteTeam = [];
 		pla.blueTeamStrength ;
 		pla.redTeamStrength ;
 		pla.ganerate = function ganerate(){
