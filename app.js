@@ -168,7 +168,7 @@
 
 
 
-		if(pla.matchPlayer.length % 2 == 1 || pla.matchPlayer.length > (pla.blueTeam.length + pla.redTeam.length)){
+		/*if(pla.matchPlayer.length % 2 == 1 || pla.matchPlayer.length > (pla.blueTeam.length + pla.redTeam.length)){
 			
 			var leftedPlayer = pla.matchPlayer.slice();
 			for(var i = 0 ; i < pla.blueTeam.length ; i ++){
@@ -201,7 +201,7 @@
 				
 				
 			}
-		}
+		}*/
 		}
 		
 		
