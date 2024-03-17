@@ -152,6 +152,7 @@
 		}*/
 		console.log("team A" , teamA);
 		console.log("team B" , teamB);
+			console.log("team C" , teamC);
 		pla.blueTeam = teamA;
 		pla.redTeam = teamB;
 		pla.whiteTeam = teamC;
