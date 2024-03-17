@@ -265,7 +265,7 @@
 			players.sort(compareStrength);
 			console.log("after sort" , players.sort(compareStrength));
 			// INITIAL DISTRIBUTION OF PLAYERS INTO WEAKER AND STRONGER TEAM (ALTERNATING)
-			var wTeam = [], sTeam = [] ; cTeam = [];
+			var wTeam = [], sTeam = [] , cTeam = [];
 			for (var i = players.length % 3; i < players.length; i += 3) {
 				wTeam.push(players[i]);
 				sTeam.push(players[i + 1]);
