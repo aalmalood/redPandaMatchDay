@@ -101,17 +101,19 @@
 		}
 
 		pla.newGanerate = function newGanerate(){
-			//console.log("before shuffle " , pla.matchPlayer);
+			console.log("before shuffle " , pla.matchPlayer);
 			pla.matchPlayer = shuffle(pla.matchPlayer);
-			//console.log("after shuffle " , pla.matchPlayer);
+			console.log("after shuffle " , pla.matchPlayer);
 			//var result = equalTeams(pla.matchPlayer);
 			
 		var midfielderPlayer = pla.matchPlayer.filter(o => o.pose=="M");
-		//console.log("midfielderPlayer " , midfielderPlayer);
+		console.log("midfielderPlayer " , midfielderPlayer);
 		var mResult = equalTeams(midfielderPlayer);
 		var defenderPlayer = pla.matchPlayer.filter(o => o.pose=="D");
-		//console.log("defenderPlayer " , defenderPlayer);
+		console.log("defenderPlayer " , defenderPlayer);
 		var dResult = equalTeams(defenderPlayer);
+		console.log("dResult " , dResult);
+		console.log("ةResult " , ةResult);
 		var teamA = [];
 		var teamAStrngeth = 0;
 		var teamB = [];
@@ -261,9 +263,9 @@
 
 		function equalTeams(players) {
 			// SORT PLAYERS FROM WEAKEST TO STRONGEST
-			console.log("before sort" , players);
+			//console.log("before sort" , players);
 			players.sort(compareStrength);
-			console.log("after sort" , players.sort(compareStrength));
+			//console.log("after sort" , players.sort(compareStrength));
 			// INITIAL DISTRIBUTION OF PLAYERS INTO WEAKER AND STRONGER TEAM (ALTERNATING)
 			var wTeam = [], sTeam = [] , cTeam = [];
 			for (var i = players.length % 3; i < players.length; i += 3) {
