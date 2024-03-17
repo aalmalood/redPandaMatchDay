@@ -85,6 +85,15 @@
           </ol>
          
           </div>
+	<div class="column">
+          <h4 ng-if="pp.whiteTeam.length > 0">Team Strgenth = {{pp.whiteTeamStrength}}</h4>
+              <ol style="text-align: center; bgcolor=white">
+                <h3  align="center"  class="display-3">White Team</h3>
+                <li ng-repeat="y in pp.whiteTeam">
+                  {{y.name}}  {{y.pose}}
+                </li>
+              </ol> 
+            </div>
       </div>
           
         
