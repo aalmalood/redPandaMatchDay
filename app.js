@@ -113,7 +113,7 @@
 		console.log("defenderPlayer " , defenderPlayer);
 		var dResult = equalTeams(defenderPlayer);
 		console.log("dResult " , dResult);
-		console.log("ةResult " , ةResult);
+		console.log("mResult " , ةResult);
 		var teamA = [];
 		var teamAStrngeth = 0;
 		var teamB = [];
