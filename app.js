@@ -144,10 +144,8 @@
 		//console.log("team B" , teamB);
 		pla.blueTeam = teamA;
 		pla.redTeam = teamB;
-		pla.whiteTeam = teamC;
 		pla.blueTeamStrength = teamAStrngeth;
 		pla.redTeamStrength = teamBStrngeth;
-		pla.whiteTeamStrength = teamCStrngeth;
 
 
 
