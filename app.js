@@ -157,7 +157,7 @@
 		}*/
 		console.log("team A" , teamA);
 		console.log("team B" , teamB);
-			console.log("team C" , teamC);
+		console.log("team C" , teamC);
 		pla.blueTeam = teamA;
 		pla.redTeam = teamB;
 		pla.whiteTeam = teamC;
@@ -341,9 +341,9 @@
 				}
 			}
 			// PERFORM SWAP OF BEST PAIR OF SELECTIONS FROM EACH TEAM
-			swapPlayers(wTeam, sTeam, wBestSel, sBestSel);
+			/*swapPlayers(wTeam, sTeam, wBestSel, sBestSel);
 			swapPlayers(cTeam, sTeam, cBestSel, sBestSel);
-			swapPlayers(sTeam, cTeam, sBestSel, cBestSel);
+			swapPlayers(sTeam, cTeam, sBestSel, cBestSel);*/
 			return {teams: [wTeam, sTeam,cTeam], strengths: [teamStrength(wTeam), teamStrength(sTeam), teamStrength(cTeam)]};
 		}
 		
