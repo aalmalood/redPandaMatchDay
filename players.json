@@ -35,5 +35,6 @@
     {"name" : "Mohd Almesmari", "strength" : 6, "pose": "D", "movement" : 3  },
     {"name" : "Albdulla G Aljabri", "strength" : 8, "pose": "D", "movement" : 4  },
     {"name" : "Mubarak Bosharar", "strength" : 8, "pose": "M", "movement" : 3  },
-    {"name" : "Alhareth", "strength" : 8, "pose": "D", "movement" : 3  }
+    {"name" : "Alhareth", "strength" : 8, "pose": "D", "movement" : 3  },
+    {"name" : "Isa Aljabri", "strength" : 8, "pose": "D", "movement" : 3  }
 ]
