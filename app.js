@@ -168,17 +168,22 @@
 
 
 
-		/*if(pla.matchPlayer.length % 2 == 1 || pla.matchPlayer.length > (pla.blueTeam.length + pla.redTeam.length)){
+		if(pla.matchPlayer.length % 3 <= 1 || pla.matchPlayer.length > (pla.blueTeam.length + pla.redTeam.length + pla.whiteTeam.length)){
 			
 			var leftedPlayer = pla.matchPlayer.slice();
 			for(var i = 0 ; i < pla.blueTeam.length ; i ++){
 				var player1 = pla.blueTeam[i];
 				var player2 = pla.redTeam[i];
+				var player3 = pla.whiteTeam[i];
 				var idx = leftedPlayer.indexOf(player1);
 				if (idx > -1) {
 					leftedPlayer.splice(idx, 1);
 				}
 				var idx = leftedPlayer.indexOf(player2);
+				if (idx > -1) {
+					leftedPlayer.splice(idx, 1);
+				}
+				var idx = leftedPlayer.indexOf(player3);
 				if (idx > -1) {
 					leftedPlayer.splice(idx, 1);
 				}
@@ -188,11 +193,20 @@
 				for(var i = 0 ; i<leftedPlayer.length ; i++){
 					var weekerTeam = 1 ;
 					if(pla.blueTeamStrength < pla.redTeamStrength){
-						weekerTeam = 0;
+						if(pla.whiteTeamStrength < pla.blueTeamStrength){
+							weekerTeam = 2;
+						}else{
+							weekerTeam = 0;
+						}
+						
 					}
 					if(weekerTeam == 0){
 						pla.blueTeam.push(leftedPlayer[i]);
 						pla.blueTeamStrength = pla.blueTeamStrength + leftedPlayer[i].strength;
+					}else if(weekerTeam == 2){
+						pla.whiteTeam.push(leftedPlayer[i]);
+						pla.whiteTeamStrength = pla.whiteTeamStrength + leftedPlayer[i].strength;
+						
 					}else{
 						pla.redTeam.push(leftedPlayer[i]);
 						pla.redTeamStrength = pla.redTeamStrength + leftedPlayer[i].strength;
@@ -201,7 +215,7 @@
 				
 				
 			}
-		}*/
+		}
 		}
 		
 		
