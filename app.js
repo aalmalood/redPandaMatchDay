@@ -155,9 +155,9 @@
 				teamBStrngeth = mResult.strengths[1] + dResult.strengths[1];
 			}
 		}*/
-		console.log("team A" , teamA);
-		console.log("team B" , teamB);
-		console.log("team C" , teamC);
+		//console.log("team A" , teamA);
+		//console.log("team B" , teamB);
+		//console.log("team C" , teamC);
 		pla.blueTeam = teamA;
 		pla.redTeam = teamB;
 		pla.whiteTeam = teamC;
@@ -216,6 +216,10 @@
 				
 			}
 		}
+
+		console.log("pla.redTeam" , pla.redTeam);
+		console.log("pla.whiteTeam" , pla.whiteTeam);
+		console.log("pla.blueTeam" , pla.blueTeam);
 		}
 		
 		
