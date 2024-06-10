@@ -36,5 +36,9 @@
     {"name" : "Albdulla G Aljabri", "strength" : 8, "pose": "D", "movement" : 4  },
     {"name" : "Mubarak Bosharar", "strength" : 8, "pose": "M", "movement" : 3  },
     {"name" : "Alhareth", "strength" : 8, "pose": "D", "movement" : 3  },
-    {"name" : "Isa Aljabri", "strength" : 8, "pose": "D", "movement" : 3  }
+    {"name" : "Isa Aljabri", "strength" : 8, "pose": "D", "movement" : 3  },
+    {"name" : "Emad Alzubaidy", "strength" : 7, "pose": "D", "movement" : 4  },
+    {"name" : "Abdulrahman Alzubaidy", "strength" : 9, "pose": "M", "movement" : 4  },
+    {"name" : "AlHareth", "strength" : 7.5, "pose": "M", "movement" : 3  },
+    {"name" : "Mohammed Almalki", "strength" : 8.5, "pose": "M", "movement" : 4  }
 ]
