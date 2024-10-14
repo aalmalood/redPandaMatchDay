@@ -44,5 +44,7 @@
     {"name" : "مشعل (احمد)", "strength" : 8.5, "pose": "D", "movement" : 3  },
     {"name" : "الستري (احمد)", "strength" : 8.5, "pose": "D", "movement" : 3  },
     {"name" : "عصام (احمد)", "strength" : 8.5, "pose": "D", "movement" : 3  },
-    {"name" : "طه (احمد)", "strength" : 8, "pose": "M", "movement" : 5  }
+    {"name" : "طه (احمد)", "strength" : 8, "pose": "M", "movement" : 5  },
+     {"name" : "خميس", "strength" : 6, "pose": "M", "movement" : 3  },
+     {"name" : "محمد خميس", "strength" : 7, "pose": "D", "movement" : 3  }
 ]
