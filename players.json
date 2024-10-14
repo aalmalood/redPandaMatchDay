@@ -1,5 +1,5 @@
 [ 
-    {"name" : "المالود", "strength" : 8.5, "pose": "M", "movement" : 5 },
+    {"name" : "المالود", "strength" : 8, "pose": "M", "movement" : 4 },
     {"name" : "علاء", "strength" : 7, "pose": "M", "movement" : 3  },
     {"name" : "اليا", "strength" : 9, "pose": "D", "movement" : 5  },
     {"name" : "فايز", "strength" : 8, "pose": "M", "movement" : 3  },
